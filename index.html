@@ -1,1 +1,342 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071b3a">
+<title>Vitrine Premiada</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+  color: #17243a;
+}
+
+header {
+  background: linear-gradient(135deg, #06152f, #12376b);
+  color: white;
+  text-align: center;
+  padding: 28px 15px 22px;
+  border-bottom: 4px solid #d8ad45;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #f3ca62;
+  letter-spacing: 1px;
+}
+
+.slogan {
+  margin-top: 8px;
+  color: white;
+  font-size: 15px;
+}
+
+.search {
+  max-width: 600px;
+  margin: 22px auto 0;
+  display: flex;
+  gap: 8px;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px;
+  border: 0;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.search button {
+  background: #d8ad45;
+  color: #071b3a;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px 10px;
+  background: white;
+  box-shadow: 0 2px 7px #00000012;
+}
+
+nav a {
+  color: #12376b;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px 14px;
+}
+
+.banner {
+  background: #102e59;
+  color: white;
+  padding: 25px 15px;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid #d8ad45;
+}
+
+.banner h2 {
+  color: #f3ca62;
+  margin-top: 0;
+}
+
+h2.section-title {
+  color: #102e59;
+  margin: 28px 0 15px;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.category {
+  background: white;
+  padding: 18px 8px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  color: #102e59;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.category:hover,
+.category.active {
+  background: #102e59;
+  color: #f3ca62;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.product {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 3px 12px #0000000d;
+}
+
+.product img {
+  width: 100%;
+  height: 155px;
+  object-fit: contain;
+  background: #f1f3f7;
+  border-radius: 8px;
+}
+
+.product h3 {
+  color: #102e59;
+  font-size: 17px;
+}
+
+.product p {
+  color: #687386;
+  font-size: 14px;
+}
+
+.price {
+  color: #173d27;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.product a {
+  display: block;
+  background: #d8ad45;
+  color: #071b3a;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+  color: #687386;
+}
+
+footer {
+  background: #071b3a;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 35px;
+  border-top: 4px solid #d8ad45;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 400px) {
+  .logo {
+    font-size: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">★ VITRINE PREMIADA ★</div>
+  <div class="slogan">Ofertas que valem a pena!</div>
+
+  <div class="search">
+    <input
+      type="search"
+      id="pesquisa"
+      placeholder="O que você está procurando?"
+      aria-label="Pesquisar produtos"
+    >
+    <button onclick="filtrarProdutos()">Buscar</button>
+  </div>
+</header>
+
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#categorias">Categorias</a>
+  <a href="#ofertas">Ofertas</a>
+</nav>
+
+<main id="inicio">
+
+  <section class="banner">
+    <h2>Bem-vindo à Vitrine Premiada!</h2>
+    <p>
+      Encontre produtos de várias categorias
+      e descubra oportunidades nas lojas parceiras.
+    </p>
+  </section>
+
+  <section id="categorias">
+    <h2 class="section-title">Nossas categorias</h2>
+
+    <div class="categories">
+      <div class="category active" onclick="filtrarCategoria('Todas', this)">
+        🛍️ Todas
+      </div>
+
+      <div class="category" onclick="filtrarCategoria('Eletrônicos', this)">
+        📱 Eletrônicos
+      </div>
+
+      <div class="category" onclick="filtrarCategoria('Moda', this)">
+        👕 Moda e calçados
+      </div>
+
+      <div class="category" onclick="filtrarCategoria('Casa', this)">
+        🏠 Casa e cozinha
+      </div>
+
+      <div class="category" onclick="filtrarCategoria('Beleza', this)">
+        💄 Beleza e perfumes
+      </div>
+
+      <div class="category" onclick="filtrarCategoria('Outros', this)">
+        🎁 Outros produtos
+      </div>
+    </div>
+  </section>
+
+  <section id="ofertas">
+    <h2 class="section-title">Produtos em destaque</h2>
+
+    <div class="products" id="listaProdutos">
+
+      <div class="empty">
+        <h3>Em breve, muitas ofertas!</h3>
+        <p>
+          Estamos preparando nossa vitrine.
+          Os produtos, preços e links das lojas
+          parceiras serão adicionados aqui.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong>VITRINE PREMIADA</strong><br>
+  Ofertas que valem a pena!<br><br>
+
+  Alguns links deste site poderão ser links de afiliados.
+  Podemos receber uma comissão por compras realizadas
+  através deles, sem custo adicional para o comprador.<br><br>
+
+  Preços e disponibilidade são definidos pelas lojas
+  parceiras e podem mudar a qualquer momento.
+</footer>
+
+<script>
+function filtrarProdutos() {
+  const termo = document
+    .getElementById("pesquisa")
+    .value
+    .toLowerCase();
+
+  document.querySelectorAll(".product").forEach(produto => {
+    produto.style.display =
+      produto.textContent.toLowerCase().includes(termo)
+      ? ""
+      : "none";
+  });
+}
+
+function filtrarCategoria(categoria, elemento) {
+  document.querySelectorAll(".category").forEach(item => {
+    item.classList.remove("active");
+  });
+
+  elemento.classList.add("active");
+
+  document.querySelectorAll(".product").forEach(produto => {
+    produto.style.display =
+      categoria === "Todas" ||
+      produto.dataset.categoria === categoria
+      ? ""
+      : "none";
+  });
+}
+
+document
+  .getElementById("pesquisa")
+  .addEventListener("input", filtrarProdutos);
+</script>
+
+</body>
+</html>
+
