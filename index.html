@@ -4,8 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071b3a">
-<title>Vitrine Premiada</title>
+<meta name="theme-color" content="#071a36">
+
+<title>Vitrine Premiada | Ofertas que valem a pena!</title>
 
 <style>
 * {
@@ -15,73 +16,75 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f5f6fa;
-  color: #17243a;
+  background: #f4f6fa;
+  color: #18243a;
 }
 
+/* CABEÇALHO */
 header {
-  background: linear-gradient(135deg, #06152f, #12376b);
+  background: linear-gradient(135deg, #06152f, #153c70);
   color: white;
   text-align: center;
-  padding: 28px 15px 22px;
-  border-bottom: 4px solid #d8ad45;
+  padding: 30px 15px 25px;
+  border-bottom: 5px solid #d8ad45;
 }
 
 .logo {
+  color: #f5ce68;
   font-size: 30px;
   font-weight: bold;
-  color: #f3ca62;
   letter-spacing: 1px;
 }
 
 .slogan {
-  margin-top: 8px;
-  color: white;
-  font-size: 15px;
+  margin-top: 9px;
+  font-size: 16px;
 }
 
 .search {
+  display: flex;
   max-width: 600px;
   margin: 22px auto 0;
-  display: flex;
   gap: 8px;
 }
 
 .search input {
   flex: 1;
   min-width: 0;
-  padding: 13px;
-  border: 0;
+  padding: 14px;
+  border: none;
   border-radius: 8px;
   font-size: 15px;
 }
 
 .search button {
-  background: #d8ad45;
-  color: #071b3a;
-  border: 0;
+  border: none;
   border-radius: 8px;
-  padding: 0 16px;
+  padding: 0 18px;
+  background: #e2b84e;
+  color: #071a36;
   font-weight: bold;
+  cursor: pointer;
 }
 
+/* MENU */
 nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 15px 10px;
+  gap: 22px;
+  padding: 17px 10px;
   background: white;
-  box-shadow: 0 2px 7px #00000012;
+  box-shadow: 0 2px 8px #00000012;
 }
 
 nav a {
   color: #12376b;
   text-decoration: none;
   font-weight: bold;
-  font-size: 14px;
 }
 
+/* CONTEÚDO */
 main {
   max-width: 1100px;
   margin: auto;
@@ -89,67 +92,78 @@ main {
 }
 
 .banner {
-  background: #102e59;
+  background: linear-gradient(135deg, #102e59, #1b477e);
   color: white;
-  padding: 25px 15px;
-  border-radius: 12px;
   text-align: center;
+  padding: 30px 18px;
   border: 2px solid #d8ad45;
+  border-radius: 13px;
 }
 
 .banner h2 {
-  color: #f3ca62;
+  color: #f5ce68;
   margin-top: 0;
 }
 
-h2.section-title {
-  color: #102e59;
-  margin: 28px 0 15px;
+.banner p {
+  line-height: 1.6;
 }
 
+.section-title {
+  color: #102e59;
+  margin: 30px 0 16px;
+  font-size: 23px;
+}
+
+/* CATEGORIAS */
 .categories {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
 
 .category {
   background: white;
-  padding: 18px 8px;
+  border: 1px solid #dce1e9;
   border-radius: 10px;
+  padding: 18px 8px;
   text-align: center;
-  border: 1px solid #e5e7eb;
-  color: #102e59;
+  color: #12376b;
   font-weight: bold;
   cursor: pointer;
 }
 
-.category:hover,
-.category.active {
+.category.active,
+.category:hover {
   background: #102e59;
-  color: #f3ca62;
+  color: #f5ce68;
+  border-color: #d8ad45;
 }
 
+/* PRODUTOS */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 16px;
+  gap: 17px;
 }
 
 .product {
   background: white;
   border-radius: 12px;
-  padding: 15px;
+  padding: 14px;
+  box-shadow: 0 3px 12px #00000010;
   text-align: center;
-  box-shadow: 0 3px 12px #0000000d;
 }
 
-.product img {
-  width: 100%;
-  height: 155px;
-  object-fit: contain;
-  background: #f1f3f7;
-  border-radius: 8px;
+.product-photo {
+  height: 165px;
+  border-radius: 9px;
+  background: #edf0f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #778398;
+  font-size: 48px;
 }
 
 .product h3 {
@@ -160,6 +174,7 @@ h2.section-title {
 .product p {
   color: #687386;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .price {
@@ -168,10 +183,10 @@ h2.section-title {
   font-weight: bold;
 }
 
-.product a {
+.buy-button {
   display: block;
   background: #d8ad45;
-  color: #071b3a;
+  color: #071a36;
   padding: 12px;
   border-radius: 8px;
   text-decoration: none;
@@ -179,29 +194,47 @@ h2.section-title {
   margin-top: 12px;
 }
 
+.buy-button:hover {
+  background: #efc95f;
+}
+
 .empty {
   grid-column: 1 / -1;
   text-align: center;
-  padding: 25px;
+  padding: 25px 15px;
   background: white;
   border-radius: 10px;
   color: #687386;
 }
 
+/* RODAPÉ */
 footer {
-  background: #071b3a;
-  color: white;
-  text-align: center;
-  padding: 25px 15px;
   margin-top: 35px;
-  border-top: 4px solid #d8ad45;
+  padding: 28px 15px;
+  text-align: center;
+  background: #071a36;
+  color: white;
+  border-top: 5px solid #d8ad45;
   font-size: 13px;
   line-height: 1.7;
 }
 
-@media (max-width: 400px) {
+footer strong {
+  color: #f5ce68;
+  font-size: 17px;
+}
+
+@media (max-width: 500px) {
   .logo {
     font-size: 25px;
+  }
+
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav {
+    gap: 15px;
   }
 }
 </style>
@@ -211,7 +244,10 @@ footer {
 
 <header>
   <div class="logo">★ VITRINE PREMIADA ★</div>
-  <div class="slogan">Ofertas que valem a pena!</div>
+
+  <div class="slogan">
+    Ofertas que valem a pena!
+  </div>
 
   <div class="search">
     <input
@@ -220,53 +256,69 @@ footer {
       placeholder="O que você está procurando?"
       aria-label="Pesquisar produtos"
     >
-    <button onclick="filtrarProdutos()">Buscar</button>
+
+    <button type="button" onclick="filtrarProdutos()">
+      Buscar
+    </button>
   </div>
 </header>
 
 <nav>
   <a href="#inicio">Início</a>
   <a href="#categorias">Categorias</a>
-  <a href="#ofertas">Ofertas</a>
+  <a href="#ofertas">Produtos</a>
 </nav>
 
 <main id="inicio">
 
   <section class="banner">
     <h2>Bem-vindo à Vitrine Premiada!</h2>
+
     <p>
-      Encontre produtos de várias categorias
-      e descubra oportunidades nas lojas parceiras.
+      Seu espaço para descobrir produtos,
+      novidades e oportunidades em diversas lojas.
+    </p>
+
+    <p>
+      Navegue pelas categorias e encontre o que procura!
     </p>
   </section>
 
   <section id="categorias">
-    <h2 class="section-title">Nossas categorias</h2>
+    <h2 class="section-title">Explore nossas categorias</h2>
 
     <div class="categories">
-      <div class="category active" onclick="filtrarCategoria('Todas', this)">
+
+      <button class="category active"
+        onclick="filtrarCategoria('Todas', this)">
         🛍️ Todas
-      </div>
+      </button>
 
-      <div class="category" onclick="filtrarCategoria('Eletrônicos', this)">
+      <button class="category"
+        onclick="filtrarCategoria('Eletrônicos', this)">
         📱 Eletrônicos
-      </div>
+      </button>
 
-      <div class="category" onclick="filtrarCategoria('Moda', this)">
+      <button class="category"
+        onclick="filtrarCategoria('Moda', this)">
         👕 Moda e calçados
-      </div>
+      </button>
 
-      <div class="category" onclick="filtrarCategoria('Casa', this)">
+      <button class="category"
+        onclick="filtrarCategoria('Casa', this)">
         🏠 Casa e cozinha
-      </div>
+      </button>
 
-      <div class="category" onclick="filtrarCategoria('Beleza', this)">
+      <button class="category"
+        onclick="filtrarCategoria('Beleza', this)">
         💄 Beleza e perfumes
-      </div>
+      </button>
 
-      <div class="category" onclick="filtrarCategoria('Outros', this)">
+      <button class="category"
+        onclick="filtrarCategoria('Outros', this)">
         🎁 Outros produtos
-      </div>
+      </button>
+
     </div>
   </section>
 
@@ -275,61 +327,118 @@ footer {
 
     <div class="products" id="listaProdutos">
 
-      <div class="empty">
-        <h3>Em breve, muitas ofertas!</h3>
+      <article class="product" data-categoria="Eletrônicos">
+        <div class="product-photo">📱</div>
+        <h3>Eletrônicos</h3>
         <p>
-          Estamos preparando nossa vitrine.
-          Os produtos, preços e links das lojas
-          parceiras serão adicionados aqui.
+          Espaço reservado para foto,
+          descrição e preço do produto.
         </p>
-      </div>
+      </article>
+
+      <article class="product" data-categoria="Moda">
+        <div class="product-photo">👟</div>
+        <h3>Moda e calçados</h3>
+        <p>
+          Espaço reservado para foto,
+          descrição e preço do produto.
+        </p>
+      </article>
+
+      <article class="product" data-categoria="Casa">
+        <div class="product-photo">🏠</div>
+        <h3>Casa e cozinha</h3>
+        <p>
+          Espaço reservado para foto,
+          descrição e preço do produto.
+        </p>
+      </article>
+
+      <article class="product" data-categoria="Beleza">
+        <div class="product-photo">💄</div>
+        <h3>Beleza e perfumes</h3>
+        <p>
+          Espaço reservado para foto,
+          descrição e preço do produto.
+        </p>
+      </article>
+
+      <article class="product" data-categoria="Outros">
+        <div class="product-photo">🎁</div>
+        <h3>Outros produtos</h3>
+        <p>
+          Espaço reservado para foto,
+          descrição e preço do produto.
+        </p>
+      </article>
 
     </div>
+
+    <p id="semResultado" class="empty" hidden>
+      Nenhum produto encontrado. Tente outra pesquisa.
+    </p>
   </section>
 
 </main>
 
 <footer>
-  <strong>VITRINE PREMIADA</strong><br>
-  Ofertas que valem a pena!<br><br>
+  <strong>★ VITRINE PREMIADA ★</strong>
+
+  <p>Ofertas que valem a pena!</p>
 
   Alguns links deste site poderão ser links de afiliados.
   Podemos receber uma comissão por compras realizadas
-  através deles, sem custo adicional para o comprador.<br><br>
+  através deles, sem custo adicional para o comprador.
 
-  Preços e disponibilidade são definidos pelas lojas
-  parceiras e podem mudar a qualquer momento.
+  <br><br>
+
+  Preços, condições e disponibilidade são definidos
+  pelas lojas parceiras e podem mudar sem aviso prévio.
 </footer>
 
 <script>
+let categoriaAtual = "Todas";
+
 function filtrarProdutos() {
   const termo = document
     .getElementById("pesquisa")
     .value
-    .toLowerCase();
+    .toLowerCase()
+    .trim();
 
-  document.querySelectorAll(".product").forEach(produto => {
-    produto.style.display =
-      produto.textContent.toLowerCase().includes(termo)
-      ? ""
-      : "none";
+  const produtos = document.querySelectorAll(".product");
+  let encontrados = 0;
+
+  produtos.forEach(produto => {
+    const texto = produto.textContent.toLowerCase();
+
+    const combinaTexto = texto.includes(termo);
+
+    const combinaCategoria =
+      categoriaAtual === "Todas" ||
+      produto.dataset.categoria === categoriaAtual;
+
+    const mostrar = combinaTexto && combinaCategoria;
+
+    produto.style.display = mostrar ? "" : "none";
+
+    if (mostrar) encontrados++;
   });
+
+  document.getElementById("semResultado").hidden =
+    encontrados > 0;
 }
 
-function filtrarCategoria(categoria, elemento) {
+function filtrarCategoria(categoria, botao) {
+  categoriaAtual = categoria;
+
   document.querySelectorAll(".category").forEach(item => {
     item.classList.remove("active");
   });
 
-  elemento.classList.add("active");
+  botao.classList.add("active");
 
-  document.querySelectorAll(".product").forEach(produto => {
-    produto.style.display =
-      categoria === "Todas" ||
-      produto.dataset.categoria === categoria
-      ? ""
-      : "none";
-  });
+  filtrarProdutos();
 }
 
 document
@@ -339,4 +448,3 @@ document
 
 </body>
 </html>
-
